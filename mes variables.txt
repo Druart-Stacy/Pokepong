@@ -1,0 +1,69 @@
+mes variables:
+game_state
+ball
+background
+player1
+player2
+
+
+mes fonctions:
+def update()
+def ball_movement()
+def computer_player_movement()
+def reset_ball()
+def draw():
+def on_mouse_move(pos):
+def reset_game():
+
+
+
+bout de code:
+ 
+if ball.left < 0:
+        player2_score += 1
+        if player2_score == 5:
+            game_state = "player2_wins"
+        else:
+            reset_ball()
+
+
+------------explication---------------
+ce code vérifie si le coté gauche de la ball a depasse la limite gauche de la fenetre du jeu ,
+Si c'est le cas, cela signifie que le joueur 2 a marqué un point.
+
+if ball.left < 0  Cette condition vérifie si le côté gauche de la balle est inférieur à 0, ce qui signifie qu'elle a franchi la limite gauche.
+
+player2_score += 1 : Si la condition est vraie (c'est-à-dire que le ballon a franchi la limite gauche), cela incrémente le player2_score de 1, indiquant que le joueur 2 a marqué un point.
+
+if player2_score == 5: Après avoir incrémenté le player2_score, il vérifie si le joueur 2 a atteint un score de 5.
+
+si il a 5poits il a gagné "
+remetre la ball au centre si le joueur2 n'a pas encore atteint un score de 5, 
+il appelle la fonction reset_ball(). Cette fonction réinitialise probablement la position de la balle au centre de l'écran, permettant ainsi au jeu de continuer.
+
+Ainsi, ce bloc de code est chargé de mettre à jour le score du joueur 2, de vérifier s'il a gagné la partie, et de réinitialiser la balle pour le tour suivant si la partie est toujours en cours.
+------------fin d'explication---------------
+
+
+
+
+
+
+
+
+------------explication---------------
+
+
+
+
+
+
+
+ # check collision avec le player
+    if ball.colliderect(player):
+        ball.speed[1] *= -1
+
+
+
+def map_buttons(val):
+        return {c for c, pressed in zip(constants.mouse, val) if pressed}
